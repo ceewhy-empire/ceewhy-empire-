@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#071b43">
+<title>Ceewhy Empire | Design Packages & Checkout</title>
+<meta name="description" content="Choose a Ceewhy Empire graphics design package, submit your project brief and pay securely online.">
+<link rel="preconnect" href="https://js.paystack.co">
+<style>
+:root{--navy:#071b43;--blue:#1557d6;--gold:#d4af37;--ink:#06090f;--panel:#0d1423;--line:#26354e;--muted:#aeb8c9;--white:#fff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--ink);color:#fff;font-family:Inter,Arial,sans-serif;line-height:1.55}
+a{text-decoration:none;color:inherit}button,input,select,textarea{font:inherit}.container{width:min(1180px,92%);margin:auto}
+header{position:sticky;top:0;z-index:30;background:rgba(6,9,15,.9);backdrop-filter:blur(16px);border-bottom:1px solid rgba(212,175,55,.16)}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between}.logo{height:52px;width:auto}.links{display:flex;gap:22px;font-size:12px;font-weight:900;color:#dbe2ee}.links a:hover{color:var(--gold)}
+.hero{padding:100px 0 70px;background:radial-gradient(circle at 75% 20%,rgba(21,87,214,.28),transparent 33%),radial-gradient(circle at 20% 80%,rgba(212,175,55,.12),transparent 25%)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:55px;align-items:center}.kicker{color:var(--gold);font-size:11px;font-weight:900;letter-spacing:3px;text-transform:uppercase}.hero h1{font-size:clamp(45px,6vw,78px);line-height:.98;letter-spacing:-4px;margin:16px 0}.hero h1 span{color:var(--blue)}.hero p{color:var(--muted);max-width:650px;font-size:17px}.hero-card{border:1px solid rgba(212,175,55,.3);background:linear-gradient(145deg,#101a2d,#090d15);border-radius:22px;padding:28px;box-shadow:0 30px 90px #0007}.hero-card img{width:100%;height:320px;object-fit:contain}
+section{padding:85px 0}.section-head{margin-bottom:35px}.section-head h2{font-size:42px;line-height:1.05;letter-spacing:-2px;margin:8px 0}.section-head p{color:var(--muted)}
+.packages{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.package{background:var(--panel);border:1px solid var(--line);border-radius:17px;padding:27px;position:relative;display:flex;flex-direction:column}.package.popular{border-color:rgba(212,175,55,.7);box-shadow:0 15px 55px rgba(212,175,55,.08)}.badge{position:absolute;right:16px;top:16px;background:var(--gold);color:#080a10;border-radius:999px;padding:6px 10px;font-size:9px;font-weight:900}.package h3{font-size:22px;margin:0 0 8px}.price{font-size:32px;color:var(--gold);font-weight:900;margin:8px 0 18px}.package ul{padding-left:18px;color:var(--muted);font-size:13px;min-height:120px}.package li{margin:7px 0}.select-btn{margin-top:auto;border:1px solid #35445d;background:#0b111c;color:#fff;padding:13px;border-radius:7px;font-weight:900;cursor:pointer}.select-btn:hover,.select-btn.active{background:var(--gold);color:#07090d;border-color:var(--gold)}
+.checkout{background:#090f1a}.checkout-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:25px;align-items:start}.summary,.form{background:#0d1423;border:1px solid var(--line);border-radius:16px;padding:27px}.summary h3{margin-top:0}.chosen{padding:16px;background:#09101b;border:1px solid #263650;border-radius:10px;margin:15px 0}.chosen strong{display:block;font-size:20px}.chosen span{color:var(--gold);font-weight:900}.summary .total{border-top:1px solid #263650;margin-top:18px;padding-top:18px;display:flex;justify-content:space-between;font-weight:900}.summary .total b{color:var(--gold);font-size:22px}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field{display:flex;flex-direction:column;gap:7px}.field.full{grid-column:1/-1}.field label{font-size:10px;text-transform:uppercase;letter-spacing:1.5px;font-weight:900;color:#dbe2ee}.field input,.field select,.field textarea{width:100%;background:#090f19;border:1px solid #2b3a54;color:#fff;border-radius:7px;padding:12px;outline:none}.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--gold)}textarea{min-height:130px;resize:vertical}.terms{font-size:11px;color:#7f8ca0}.pay{grid-column:1/-1;background:var(--gold);border:0;border-radius:7px;padding:15px;font-weight:900;color:#080a0f;cursor:pointer}.pay:disabled{opacity:.5;cursor:not-allowed}.hint{font-size:11px;color:#7f8ca0}
+.info{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.info-card{padding:22px;background:var(--panel);border:1px solid var(--line);border-radius:13px}.info-card b{color:var(--gold);font-size:11px;letter-spacing:1.5px;text-transform:uppercase}.info-card p{color:var(--muted);font-size:13px}
+footer{border-top:1px solid #19243a;padding:30px 0;color:#7d8a9f;font-size:12px}.foot{display:flex;justify-content:space-between}.toast{position:fixed;right:18px;bottom:18px;z-index:80;display:none;background:#101a2c;border:1px solid rgba(212,175,55,.55);padding:13px 17px;border-radius:8px}
+@media(max-width:850px){.links{display:none}.hero-grid,.checkout-grid{grid-template-columns:1fr}.packages{grid-template-columns:1fr 1fr}.info{grid-template-columns:1fr}.hero{padding-top:70px}}
+@media(max-width:560px){.packages{grid-template-columns:1fr}.form{grid-template-columns:1fr}.field.full,.pay{grid-column:auto}.foot{display:block}.foot p+p{margin-top:7px}}
+</style>
+</head>
+<body>
+<header><div class="container nav">
+<a href="index.html"><img class="logo" src="assets/logo.png" alt="Ceewhy Empire"></a>
+<nav class="links"><a href="#packages">Packages</a><a href="#checkout">Checkout</a><a href="#how">How it works</a><a href="mailto:cyriloluwaferanmi@gmail.com">Email</a><a href="https://wa.me/2349134779079" target="_blank">WhatsApp</a></nav>
+</div></header>
+
+<section class="hero"><div class="container hero-grid">
+<div><div class="kicker">Ceewhy Empire — Online Design Store</div><h1>Choose your package. <span>Pay.</span> Let's create.</h1><p>Pick a design package, tell us exactly what you need, then complete secure online payment. Your project brief is sent to Ceewhy Empire for processing.</p></div>
+<div class="hero-card"><img src="assets/logo.png" alt="Ceewhy Empire logo"></div>
+</div></section>
+
+<section id="packages"><div class="container">
+<div class="section-head"><div class="kicker">Transparent pricing</div><h2>Design Packages</h2><p>Starting prices are displayed in Nigerian naira. You can edit these prices later in the website code.</p></div>
+<div class="packages" id="packageGrid"></div>
+</div></section>
+
+<section class="checkout" id="checkout"><div class="container">
+<div class="section-head"><div class="kicker">Secure checkout</div><h2>Submit your project & pay</h2><p>Select a package above, complete your brief, then click the payment button.</p></div>
+<div class="checkout-grid">
+<div class="summary"><h3>Your selection</h3><div class="chosen"><strong id="chosenName">No package selected</strong><span id="chosenPrice">₦0</span></div><p class="hint">Your payment amount is tied to the package selected. If your project needs something outside the package scope, Ceewhy Empire can quote the difference before work begins.</p><div class="total"><span>Total</span><b id="total">₦0</b></div></div>
+<form class="form" id="checkoutForm">
+<div class="field"><label>Name</label><input id="name" required placeholder="Your full name"></div>
+<div class="field"><label>Email</label><input id="email" type="email" required placeholder="you@example.com"></div>
+<div class="field"><label>WhatsApp / Phone</label><input id="phone" required placeholder="080..."></div>
+<div class="field"><label>Preferred deadline</label><input id="deadline" type="date"></div>
+<div class="field full"><label>Project brief</label><textarea id="brief" required placeholder="Tell us the exact design you want, text to include, size/platform, preferred style, colors, and any important instructions."></textarea></div>
+<div class="field full"><label>Reference / extra note</label><textarea id="reference" placeholder="Optional: paste a link or describe a reference design."></textarea></div>
+<div class="field full"><div class="terms">By paying, you confirm that the information supplied is accurate and that the selected package is the service you intend to purchase. Payment processing is handled by Paystack.</div></div>
+<button class="pay" id="payBtn" type="submit" disabled>SELECT A PACKAGE FIRST</button>
+</form>
+</div></div></section>
+
+<section id="how"><div class="container">
+<div class="section-head"><div class="kicker">The workflow</div><h2>What happens after payment?</h2></div>
+<div class="info">
+<div class="info-card"><b>01 — Payment</b><p>Your selected package amount is processed through Paystack's checkout.</p></div>
+<div class="info-card"><b>02 — Brief</b><p>Your project details are packaged with the order so the design brief is clear.</p></div>
+<div class="info-card"><b>03 — Production</b><p>Ceewhy Empire reviews the brief and begins the design workflow according to the agreed scope.</p></div>
+</div></div></section>
+
+<footer><div class="container foot"><p>CEEWHY EMPIRE © 2026</p><p>Premium graphics design • Cyril Oluwaferanmi Ogundele a.k.a. Ceewhy</p></div></footer>
+<div class="toast" id="toast"></div>
+
+<script src="config.js"></script>
+<script src="https://js.paystack.co/v2/inline.js"></script>
+<script>
+const PACKAGES=[
+ {id:"flyer",name:"Premium Flyer",price:5000,features:["1 premium flyer design","1 main concept","2 revision rounds","JPG/PNG delivery"]},
+ {id:"event",name:"Event / Birthday Design",price:7000,features:["1 custom event graphic","Photo/text placement","2 revision rounds","Social-ready delivery"]},
+ {id:"social",name:"Social Media Pack",price:10000,features:["3 social media graphics","Consistent visual style","2 revision rounds","JPG/PNG delivery"]},
+ {id:"logo",name:"Logo Design",price:25000,features:["Custom logo concept","2 initial directions","3 revision rounds","Transparent PNG + JPG"]},
+ {id:"brand",name:"Brand Identity Starter",price:50000,features:["Logo identity","Color palette","Typography direction","Basic brand usage guide"],popular:true},
+ {id:"business",name:"Business Design Pack",price:15000,features:["Business card design","Letterhead design","One promotional graphic","2 revision rounds"]}
+];
+let selected=null;
+const naira=n=>new Intl.NumberFormat("en-NG",{style:"currency",currency:"NGN",maximumFractionDigits:0}).format(n);
+
+function renderPackages(){
+ const grid=document.getElementById("packageGrid");
+ grid.innerHTML=PACKAGES.map(p=>`<article class="package ${p.popular?"popular":""}">
+ ${p.popular?'<div class="badge">MOST POPULAR</div>':''}
+ <div class="kicker">CEEWHY EMPIRE</div><h3>${p.name}</h3><div class="price">${naira(p.price)}</div>
+ <ul>${p.features.map(x=>`<li>${x}</li>`).join("")}</ul>
+ <button class="select-btn" data-id="${p.id}">CHOOSE PACKAGE</button>
+ </article>`).join("");
+ grid.querySelectorAll(".select-btn").forEach(b=>b.addEventListener("click",()=>selectPackage(b.dataset.id)));
+}
+function selectPackage(id){
+ selected=PACKAGES.find(p=>p.id===id);
+ document.getElementById("chosenName").textContent=selected.name;
+ document.getElementById("chosenPrice").textContent=naira(selected.price);
+ document.getElementById("total").textContent=naira(selected.price);
+ document.getElementById("payBtn").disabled=false;
+ document.getElementById("payBtn").textContent=`PAY ${naira(selected.price)} SECURELY`;
+ document.querySelectorAll(".select-btn").forEach(b=>b.classList.toggle("active",b.dataset.id===id));
+ document.getElementById("checkout").scrollIntoView({behavior:"smooth",block:"start"});
+}
+function showToast(t){const x=document.getElementById("toast");x.textContent=t;x.style.display="block";setTimeout(()=>x.style.display="none",3500)}
+
+document.getElementById("checkoutForm").addEventListener("submit",function(e){
+ e.preventDefault();
+ if(!selected){showToast("Please select a package first.");return}
+ const key=window.CEEWHY_CONFIG?.PAYSTACK_PUBLIC_KEY;
+ if(!key || key==="YOUR_PAYSTACK_PUBLIC_KEY"){
+   showToast("Payment is not activated yet. Add your Paystack PUBLIC key in config.js.");
+   return;
+ }
+ const email=document.getElementById("email").value.trim();
+ const name=document.getElementById("name").value.trim();
+ const phone=document.getElementById("phone").value.trim();
+ const deadline=document.getElementById("deadline").value||"Not specified";
+ const brief=document.getElementById("brief").value.trim();
+ const reference=document.getElementById("reference").value.trim()||"None";
+ const ref="CEEWHY-"+Date.now()+"-"+Math.random().toString(36).slice(2,8).toUpperCase();
+ const metadata={
+   custom_fields:[
+    {display_name:"Customer Name",variable_name:"customer_name",value:name},
+    {display_name:"Phone / WhatsApp",variable_name:"phone",value:phone},
+    {display_name:"Package",variable_name:"package",value:selected.name},
+    {display_name:"Deadline",variable_name:"deadline",value:deadline},
+    {display_name:"Project Brief",variable_name:"project_brief",value:brief},
+    {display_name:"Reference",variable_name:"reference",value:reference}
+   ]
+ };
+ const btn=document.getElementById("payBtn");btn.disabled=true;btn.textContent="OPENING SECURE CHECKOUT…";
+ try{
+   const popup=new PaystackPop();
+   popup.newTransaction({
+     key:key,
+     email:email,
+     amount:selected.price*100,
+     currency:"NGN",
+     reference:ref,
+     metadata:metadata,
+     onSuccess:(transaction)=>{
+       showToast("Payment successful. Your project request has been received.");
+       const msg=`Hello Ceewhy Empire! Payment completed.%0A%0AReference: ${encodeURIComponent(transaction.reference||ref)}%0APackage: ${encodeURIComponent(selected.name)}%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0ADeadline: ${encodeURIComponent(deadline)}%0ABrief: ${encodeURIComponent(brief)}%0AReference: ${encodeURIComponent(reference)}`;
+       window.open(`https://wa.me/${window.CEEWHY_CONFIG.WHATSAPP_NUMBER}?text=${msg}`,"_blank");
+       btn.disabled=false;btn.textContent=`PAID — ${naira(selected.price)}`;
+     },
+     onCancel:()=>{showToast("Payment window closed. No payment was recorded.");btn.disabled=false;btn.textContent=`PAY ${naira(selected.price)} SECURELY`;}
+   });
+ }catch(err){
+   console.error(err);showToast("Could not start checkout. Check your Paystack public key.");
+   btn.disabled=false;btn.textContent=`PAY ${naira(selected.price)} SECURELY`;
+ }
+});
+renderPackages();
+</script>
+</body>
+</html>
